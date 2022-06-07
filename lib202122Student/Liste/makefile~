@@ -1,0 +1,13 @@
+# cphex\makefile
+
+LIBS=
+all:	main	ListeSimple.o
+
+ListeSimple.o:	ListeSimple.h	ListeSimple.c
+	echo "Compilation de physlib.o"
+	cc -c ../physlib/physlib.c	
+
+main:	main.c	ListeSimple.o
+	echo "Compilation de client"
+	cc  -o main	main.c ListeSimple.o	$(LIBS)
+
